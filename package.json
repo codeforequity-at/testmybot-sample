@@ -1,0 +1,20 @@
+{
+  "name": "testmybot-sample",
+  "version": "1.0.0",
+  "description": "Continuous Testing for your Chatbots - Sample Application",
+  "main": "index.js",
+  "scripts": {
+    "start_testmybot": "page_token=test verify_token=test node index.js",
+    "test": "./node_modules/.bin/jasmine"
+  },
+  "author": "Florian Treml",
+  "license": "MIT",
+  "dependencies": {
+    "botkit": "^0.5.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "testmybot-fbmock": "0.1.0",
+    "testmybot": "0.1.0"
+  }
+}

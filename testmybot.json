@@ -1,0 +1,13 @@
+{
+  "testendpoint": "http://192.168.99.100:46199",
+  "docker": {
+    "container": {
+		"testmybot-fbmock": {
+			"env": {
+				"TESTMYBOT_FACEBOOK_WEBHOOKPORT": 3000,
+				"TESTMYBOT_FACEBOOK_WEBHOOKPATH": "facebook/receive"
+			}
+		}
+	  }
+  }
+}
