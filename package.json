@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "jasmine": "^2.5.3",
-    "testmybot-fbmock": "0.1.2",
-    "testmybot": "0.1.2"
+    "testmybot-fbmock": "0.1.3",
+    "testmybot": "0.1.3"
   },
   "repository": {
     "type": "git",
