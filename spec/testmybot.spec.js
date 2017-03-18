@@ -1,7 +1,6 @@
-
-
+const bot = require('testmybot');
+  
 describe('TestMyBot Sample Conversation Test Suite', function() {
-  var bot = require('testmybot');
 
   beforeAll(function(done) {
     bot.beforeAll().then(done);
@@ -21,12 +20,23 @@ describe('TestMyBot Sample Conversation Test Suite', function() {
 
   it('should answer to uptime', function(done) {
     
-    bot.hears('uptime');
-    
-    bot.says().then((msg) => {
-      expect(msg.messageText).toMatch(/I have been running for/);
-      done();
-    });
-  });
-
+    bot.hears('uptime')
+      .then(() => bot.says())
+      .then((msg) => {
+        expect(msg.messageText).toMatch(/I have been running for/);
+        done();
+      })
+      .catch((err) => fail(err));
+  });  
+  
+  bot.setupTestSuite(
+    (testcaseName, testcaseFunction) => {
+      it(testcaseName, testcaseFunction, 60000);
+    },
+    (response, tomatch) => {
+      expect(response).toMatch(tomatch);
+    },
+    (err) => fail(err)
+  )
 });
+ 
