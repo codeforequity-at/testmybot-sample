@@ -1,22 +1,22 @@
 const bot = require('testmybot');
-  
+
 describe('TestMyBot Sample Conversation Test Suite', function() {
 
   beforeAll(function(done) {
     bot.beforeAll().then(done);
-  }, 120000); //lots of timeout, first docker build could take pretty long
+  }, 180000); //lots of timeout, first docker build could take pretty long
 
   beforeEach(function(done) {
     bot.beforeEach().then(done);
-  }, 60000);
+  }, 180000);
 
   afterEach(function(done) {
     bot.afterEach().then(done);
-  }, 60000);
+  }, 180000);
   
   afterAll(function(done) {
     bot.afterAll().then(done);
-  }, 60000);
+  }, 180000);
 
   it('should answer to uptime', function(done) {
     
@@ -27,14 +27,14 @@ describe('TestMyBot Sample Conversation Test Suite', function() {
         done();
       })
       .catch((err) => fail(err));
-  });  
+  }, 60000);  
   
   bot.setupTestSuite(
     (testcaseName, testcaseFunction) => {
       it(testcaseName, testcaseFunction, 60000);
     },
     (response, tomatch) => {
-      expect(response).toMatch(tomatch);
+      expect(response).toContain(tomatch);
     },
     (err) => fail(err)
   )
