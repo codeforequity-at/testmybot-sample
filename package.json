@@ -4,6 +4,7 @@
   "description": "Continuous Testing for your Chatbots - Sample Application",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "start_testmybot": "page_token=test verify_token=test node index.js",
     "test": "jasmine"
   },
