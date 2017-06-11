@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "start_testmybot": "page_token=test verify_token=test node index.js",
-    "test": "jasmine"
+    "test": "./node_modules/.bin/jasmine",
+		"junit": "node jasmine.js"
   },
   "author": "Florian Treml",
   "license": "MIT",
@@ -15,9 +16,10 @@
   },
   "devDependencies": {
     "jasmine": "^2.5.3",
+    "jasmine-reporters": "^2.2.1",
     "testmybot": "0.2.3",
-    "testmybot-fbmock": "0.2.3",
     "testmybot-chat": "0.2.3",
+    "testmybot-fbmock": "0.2.3",
     "testmybot-ide": "0.2.3"
   },
   "repository": {

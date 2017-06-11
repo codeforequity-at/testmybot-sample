@@ -1,13 +1,19 @@
 {
   "docker": {
     "container": {
-		"testmybot-fbmock": {
-			"run": true,
-			"env": {
-				"TESTMYBOT_FACEBOOK_WEBHOOKPORT": 3000,
-				"TESTMYBOT_FACEBOOK_WEBHOOKPATH": "facebook/receive"
-			}
-		}
+			"testmybot-fbmock": {
+				"run": true,
+				"env": {
+					"TESTMYBOT_FACEBOOK_WEBHOOKPORT": 3000,
+					"TESTMYBOT_FACEBOOK_WEBHOOKPATH": "facebook/receive"
+				},
+				"mount": {
+					"/home/ec2-user/testmybot/testmybot-fbmock": "/usr/src/app/node_modules/testmybot-fbmock"
+				}
+			},
+      "testmybot": {
+        "dockerfile": "./Dockerfile.testmybot"
+      }			
 	  }
   }
 }
